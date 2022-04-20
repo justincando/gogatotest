@@ -1,21 +1,24 @@
 POST MODEL
 ------------------------------------------------
-id - serial (int) - primary key
-likes - int
-content - string
+	id - serial (int) - primary key  
+	likes - int  
+	content - string  
 
-author - int - foreign key (USER.id) NOT NULL
-parentComment - int - foreign key (POST.ID)
+	author - int - foreign key (USER.id) NOT NULL  
+	parentComment - int - foreign key (POST.ID)  
 
-OPTIONAL STRETCH GOAL: reshares - int
+	OPTIONAL STRETCH GOAL: reshares - int  
 
 
 USER MODEL 
 -----------------------------------------------
-id - int
-username - string
+	id - int  
+	username - string  
 
 
+
+EXAMPLE METHOD PSEUDO-CODE
+-----------------------------------------------
 getUserPosts {
 	
 	ARRAY USERPOST;
