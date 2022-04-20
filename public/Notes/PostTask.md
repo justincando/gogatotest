@@ -1,52 +1,55 @@
 FRONT END TASKS (4-5 PEOPLE)
 
-(1) POST COMPONENT -
+(1) POST COMPONENT
+
+	manage post component views (ei. expanded/fullpage, news feed, etc.)
+	manage number of visible commments
+	allow users to upload a comment via a text area or form element. 
+
 
 (1) CHANGE BUTTON COMPONENT
 
-	user friend design and content repopulation
+	fetch post. dsplay current content.
+	show text field to change content.
+	submit new post revisions to persistent storage.
+
 
 (1) LIKE BUTTON COMPONENT
 
 	increment total like count
 	assign like somehow to user
-	an enable deincrement of like count
+	an enable deincrement of like count.
 
 (2) Create page / COMPONENT
 
-	BLANK POST FORM for user input
-	fetch/axios request to store data for persistence
-	publish animation/confirmation
-	
-	SECURITY - universal user variable to confirm log-in to allow post creation
+	Dispaly form for user input
+	store data for persistence to database
+	*SECURITY* - universal user variable to confirm log-in to allow post creation
 
 
 
 
 BACK END TASKS (TEAM OF 3-4 PEOPLE)
 
-(1) EDIT AND DELETE METHODS
-
 (1) CREATE METHOD
+
+(1) CHANGE POST & DELETE POST METHOD
 
 (2) RETRIEVE
 
-	ALL POST (BY ei. USER ID) METHOD
-	CONFIRM USER LOGIN
-
-
+	GET ALL POST (Example: BY_USER_ID) METHOD
+	GET SINGLE POST METHOD
 
 
 
 JUSTIN - LIKE BUTTON
+
 BRETT - POST COMPONENT/CONTAINER
 
-JACOB, MICHAEL - CREATE, UPDATE, EDIT, DELETE
+Michael - EDIT, DELETE POST METHOD
 
 MYLES - CHANGE POST 
 
-HALIM, NAKISHA - RETRIEVE & CREATE/ MAKE POST
+JACOB, HALIM, ELAINE, NAKISHA - CREATE POST METHOD, RETRIEVE POST METHODS, CREATE POST WEB COMPONENT
 
-WILLIAM - All Post Page
-
-Elaine - Create Post Component
+WILLIAM - All POST PAGE/COMPONENT
