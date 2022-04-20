@@ -19,15 +19,15 @@ USER MODEL
 
 EXAMPLE METHOD PSEUDO-CODE
 -----------------------------------------------
-getUserPosts {
-	
-	ARRAY USERPOST;
+	getUserPosts {
 
-	while (allpost) {
+		ARRAY USERPOST;
 
-		if (author = author) USERPOST.add(comment)
+		while (allpost) {
 
+			if (author = author) USERPOST.add(comment)
+
+		}
+
+		return USERPOST;
 	}
-
-	return USERPOST;
-}
