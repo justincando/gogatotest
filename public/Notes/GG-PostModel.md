@@ -1,11 +1,13 @@
 POST MODEL
 ------------------------------------------------
+![diagram](https://raw.githubusercontent.com/Revature-GoGato/GoGatoFrontEnd/development/public/Notes/diagram.png)
+
 	id - serial (int) - primary key  
 	likes - int  
-	content - string  
+	contents - string/text  
 
-	author - int - foreign key (USER.id) NOT NULL  
-	parentComment - int - foreign key (POST.ID)  
+	userid - int - foreign key (USER.id) NOT NULL  
+	parent - int - foreign key (POST.ID)  
 
 	OPTIONAL STRETCH GOAL: reshares - int  
 
