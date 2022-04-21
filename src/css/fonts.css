@@ -1,0 +1,45 @@
+/* To Include Approved Fonts Add:
+
+        import '../css/fonts.css';
+
+to your component import/export statements. */
+
+
+/* Defines Font Source Paths for Revature Compliant Font Styles */
+
+    @font-face {
+        font-family: 'Futura-Std-Bold';
+        src: local('Futura-Std-Bold'), url(../fonts/Futura-Std-Bold.otf) format('opentype');
+        /* other formats not included: 'woff2', 'truetype, 'opentype',
+                                        'embedded-opentype', and 'svg' */
+    }
+
+    @font-face {
+    font-family: 'Futura-Std-Book';
+    src: local('Futura-Std-Book'), url(../fonts/Futura-Std-Book.otf) format('opentype');
+    }
+
+
+    @font-face {
+    font-family: 'Futura-Std-Medium';
+    src: local('Futura-Std-Medium'), url(../fonts/Futura-Std-Medium.otf) format('opentype');
+    }
+    
+    
+/* Defines Default Fonts all page texts*/
+
+    /* Sets default font for all text if not specified*/
+    *{font-family: "Futura-Std-Medium";}
+
+
+    /*Sets default font for all headers if not specified */
+    h1 {font-family: 'Futura-Std-Bold';}
+    h2 {font-family: 'Futura-Std-Bold';}
+    h3 {font-family: 'Futura-Std-Bold';}
+    h4 {font-family: 'Futura-Std-Medium';}
+    h5 {font-family: 'Futura-Std-Medium';}
+    h6 {font-family: 'Futura-Std-Medium';}
+
+
+    /*Sets default font for all paragraphs if not specified */
+    p{font-family: 'Futura-Std-Book';}
