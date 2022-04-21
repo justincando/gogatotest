@@ -21,12 +21,16 @@ const UpdateProfile = props => {
     async function submitBio() {
         console.log(bioText);
 
+        const newProfile = {
+            "profile": bioText
+        }
+
         //  Replace with props.currentUser in production
         await fetch(`${API_URL}/users/profile/${FAKE_CURRENTUSER_ID}`,
             {
                 method: 'PUT',
-                headers: { "Content-Type": "text/html" },
-                body: bioText
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newProfile)
             }).then(response => console.log(response.json()));
     }
 
