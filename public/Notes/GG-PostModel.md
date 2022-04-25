@@ -16,20 +16,3 @@ USER MODEL
 -----------------------------------------------
 	id - int  
 	username - string  
-
-
-
-EXAMPLE METHOD PSEUDO-CODE
------------------------------------------------
-	getUserPosts {
-
-		ARRAY USERPOST;
-
-		while (allpost) {
-
-			if (author = author) USERPOST.add(comment)
-
-		}
-
-		return USERPOST;
-	}
