@@ -1,9 +1,8 @@
 // Author: Tyler, Jason, Boualem, Marcus
 import { useState, useEffect } from "react";
 
-// Functional component for User Registration
+// Functional component for User Login
 function Login() {
-  //const [userToRegister, setUserToRegister] = useState(null);
 
   // Contains fields for User input
   const [inputFields, setInputFields] = useState({
@@ -11,7 +10,6 @@ function Login() {
     password: ""
   });
 
-  //useEffect(() => console.log(userToRegister), [userToRegister]);
   useEffect(() => console.log(inputFields), [inputFields]);
 
   // Handles input event for User fields/registration
