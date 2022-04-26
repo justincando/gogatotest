@@ -1,5 +1,6 @@
 // Author: Tyler, Jason, Boualem, Marcus
 import { useState, useEffect } from "react";
+import User from "../model/User";
 
 // Functional component for User Registration
 function Registration() {
@@ -26,15 +27,40 @@ function Registration() {
     });
   }
 
-
   //insert fetch call
-  function submitNewUser() {}
+  async function submitNewUser(event) {
+    // Stop default form submission event
+    event.preventDefault();
+
+    // Register user
+    let userInfo = {
+      username: inputFields.username,
+      password: inputFields.password,
+      firstName: inputFields.firstName,
+      lastName: inputFields.lastName,
+      email: inputFields.email,
+      aboutMe: inputFields.aboutMe,
+    };
+
+    // Submit info to server
+    await fetch("http://localhost:8000/users", {
+      headers: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(userInfo),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+
+    // Decide on redirection or auto login here =====
+  }
 
   return (
     <>
       <h1>Registration</h1>
 
-      <form>
+      <form onSubmit={submitNewUser}>
         {/* Username Field */}
         Username:{" "}
         <input

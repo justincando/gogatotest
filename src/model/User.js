@@ -1,7 +1,5 @@
 // Author: Tyler, Jason, Boualem, Marcus
-class User {
-    constructor(){}
-
+export default class User {
   constructor(
     username,
     password,
