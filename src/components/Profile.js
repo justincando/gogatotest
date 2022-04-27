@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UpdateAboutMe from "./UpdateAboutMe";
 
+/**
+ * Displays a user's profile. If the profile id matches the id of the currentUser (passed in via props.currentUser), the edit components will display.
+ */
 function Profile(props) {
     let { id } = useParams();
     const API_URL = "http://localhost:8000";
     const [data, setData] = useState();
 
+    /**
+     * Gets user data based on the profile ID (passed in from useParams as the number from the url)
+     */
     function getProfileInfo() {
         fetch(`${API_URL}/users/${id}`)
             .then((response) => response.json())
@@ -19,12 +25,22 @@ function Profile(props) {
 
     return (
         <>
-            {data == null ? getProfileInfo() : <h1>{data.username}'s profile </h1>}
+            {data == null ? getProfileInfo() :
+                <div id="profile-data">
 
-            {data != null && data.id == props.currentUser ? <UpdateAboutMe id={id} /> : null
-            }
+                    <h1>{data.username}'s profile </h1>
+                    <h3>About Me: {data.aboutMe}</h3>
+                    <h3>Followers: {data.followerCount}</h3>
+                    <h3>Points: {data.points}</h3>
+                    <h3>First Name: {data.firstName}</h3>
+                    <h3>Last Name: {data.lastName}</h3>
+                    <h3>Email: {data.email}</h3>
 
-            <a href={`/profile/${1}`}>Test profile 1</a>
+                </div>}
+
+            {data != null && data.id == props.currentUser ? <UpdateAboutMe id={id} /> : null}
+
+            <a href={`/profile/${1}`}>Test profile 1</a><br></br>
             <a href={`/profile/${2}`}>Test profile 2</a>
         </>
     );
