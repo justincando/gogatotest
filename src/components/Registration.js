@@ -16,10 +16,6 @@ function Registration() {
     email: "",
     aboutMe: "",
   });
-
-  //useEffect(() => console.log(userToRegister), [userToRegister]);
-  useEffect(() => console.log(inputFields), [inputFields]);
-
   // Handles input event for User fields/registration
   function getInput(event) {
     setInputFields({
@@ -33,8 +29,6 @@ function Registration() {
     // Stop default form submission event
     event.preventDefault();
 
-
-
     // Register user
     let userInfo = {
       username: inputFields.username,
@@ -44,7 +38,6 @@ function Registration() {
       email: inputFields.email,
       aboutMe: inputFields.aboutMe,
     };
-
     // Submit info to server
     await fetch("http://localhost:8000/users", {
       headers: {
@@ -58,11 +51,8 @@ function Registration() {
 
     // Decide on redirection or auto login here =====
     setSuccess(true);
-    
-
 
   }
-
   return registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
       <h1>Registration</h1>
