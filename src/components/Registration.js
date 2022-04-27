@@ -1,10 +1,11 @@
 // Author: Tyler, Jason, Boualem, Marcus
+import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import User from "../model/User";
 
 // Functional component for User Registration
 function Registration() {
-  //const [userToRegister, setUserToRegister] = useState(null);
+  const [registerSuccess, setSuccess] = useState(false);
 
   // Contains fields for User input
   const [inputFields, setInputFields] = useState({
@@ -32,6 +33,8 @@ function Registration() {
     // Stop default form submission event
     event.preventDefault();
 
+
+
     // Register user
     let userInfo = {
       username: inputFields.username,
@@ -54,9 +57,13 @@ function Registration() {
       .then((data) => console.log(data));
 
     // Decide on redirection or auto login here =====
+    setSuccess(true);
+    
+
+
   }
 
-  return (
+  return registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
       <h1>Registration</h1>
 
