@@ -1,8 +1,22 @@
 import './css/fonts.css';
-
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Registration from './components/Registration';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
 function App() {
   return (
-    <div>Keeping clawing your way through it.<br></br>Your app is running puurrfectly.<br></br>The font family is paawwfect.<br></br>Meow.</div>
+    <BrowserRouter>
+     <Navbar/> 
+    <Routes>
+    
+    <Route  path="/registration" element ={< Registration/>} /> 
+    <Route  path="/login" element ={< Login/>} /> 
+
+    </Routes>
+    </BrowserRouter>
+
+
+
   );
 }
 
