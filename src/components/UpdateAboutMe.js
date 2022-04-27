@@ -9,7 +9,6 @@ import { useState } from "react";
 const UpdateAboutMe = props => {
 
     const API_URL = "http://localhost:8000";
-    const FAKE_CURRENTUSER_ID = 1;
 
     const [aboutMeText, setaboutMeText] = useState("");
 
@@ -32,7 +31,7 @@ const UpdateAboutMe = props => {
         }
 
         //  Replace with props.currentUser in production
-        await fetch(`${API_URL}/profiles/${FAKE_CURRENTUSER_ID}/about`,
+        await fetch(`${API_URL}/profiles/${props.FAKE_CURRENTUSER_ID}/about`,
             {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" },
