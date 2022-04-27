@@ -31,7 +31,7 @@ const UpdateAboutMe = props => {
         }
 
         //  Replace with props.currentUser in production
-        await fetch(`${API_URL}/profiles/${props.FAKE_CURRENTUSER_ID}/about`,
+        await fetch(`${API_URL}/profiles/${props.id}/about`,
             {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" },
