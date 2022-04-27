@@ -4,6 +4,7 @@ import UpdateAboutMe from "./UpdateAboutMe";
 
 /**
  * Displays a user's profile. If the profile id matches the id of the currentUser (passed in via props.currentUser), the edit components will display.
+ * @author Asheton
  */
 function Profile(props) {
     let { id } = useParams();
@@ -12,6 +13,7 @@ function Profile(props) {
 
     /**
      * Gets user data based on the profile ID (passed in from useParams as the number from the url)
+     * @author Asheton
      */
     function getProfileInfo() {
         fetch(`${API_URL}/users/${id}`)
