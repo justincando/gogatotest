@@ -9,23 +9,23 @@ function Profile(props) {
 
     function getProfileInfo() {
         fetch(`${API_URL}/users/${id}`)
-        .then((response) => response.json())
-        .then((response) => {
-            setData(response);
-            console.log(response)
-        })
-        .catch((error) => console.log(error))
+            .then((response) => response.json())
+            .then((response) => {
+                setData(response);
+                console.log(response)
+            })
+            .catch((error) => console.log(error))
     }
 
     return (
         <>
-        {data == null ? getProfileInfo() : <h1>{data.username}'s profile </h1>}
+            {data == null ? getProfileInfo() : <h1>{data.username}'s profile </h1>}
 
-        {data != null && data.id == props.currentUser ? <UpdateAboutMe id={id} /> : null
-        }
+            {data != null && data.id == props.currentUser ? <UpdateAboutMe id={id} /> : null
+            }
 
-        <a href={`/profile/${1}`}>Test profile 1</a>
-        <a href={`/profile/${2}`}>Test profile 2</a>
+            <a href={`/profile/${1}`}>Test profile 1</a>
+            <a href={`/profile/${2}`}>Test profile 2</a>
         </>
     );
 
