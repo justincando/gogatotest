@@ -6,7 +6,7 @@ import { useState } from "react";
  * @param {*} props 
  * @returns 
  */
-const UpdateProfile = props => {
+const UpdateAboutMe = props => {
 
     const API_URL = "http://localhost:8000";
     const FAKE_CURRENTUSER_ID = 1;
@@ -32,7 +32,7 @@ const UpdateProfile = props => {
         }
 
         //  Replace with props.currentUser in production
-        await fetch(`${API_URL}/users/profile/${FAKE_CURRENTUSER_ID}`,
+        await fetch(`${API_URL}/profiles/${FAKE_CURRENTUSER_ID}/about`,
             {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" },
@@ -51,4 +51,4 @@ const UpdateProfile = props => {
     );
 }
 
-export default UpdateProfile;
+export default UpdateAboutMe;
