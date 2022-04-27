@@ -32,17 +32,20 @@ function Login() {
     };
 
     // Submit info to server
-    await fetch("http://localhost:8000/login", {
+   let data= await fetch("http://localhost:8000/login", {
       headers: {
         "content-type": "application/json",
       },
       method: "POST",
       body: JSON.stringify(userInfo),
     })
-      .then((response) => response.text())
-      .then(data => console.log(data));
+      .then((response) => response.text());  
 
-    // Decide on redirection here =====
+    // Decide on redirection here  and user storage =====
+    if (data!=0){
+      window.localStorage.setItem( "userId",data);
+    }
+
   }
 
   return (

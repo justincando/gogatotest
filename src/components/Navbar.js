@@ -10,6 +10,7 @@ export default function Navbar(){
     return( 
     <>
     <div>
+        
           <Link to ="/login"> Login</Link>
           <Link to ="/registration"> Register</Link>
 
