@@ -10,6 +10,7 @@ function Profile(props) {
     let { id } = useParams();
     const API_URL = "http://localhost:8000";
     const [data, setData] = useState();
+    const [showHideEdit, toggleEditDisplay] = useState(false);
 
     /**
      * Gets user data based on the profile ID (passed in from useParams as the number from the url)
@@ -25,8 +26,14 @@ function Profile(props) {
             .catch((error) => console.log(error))
     }
 
+    function showHide() {
+        toggleEditDisplay(!showHideEdit);
+    }
+
     return (
         <>
+        <div id="profile-page">
+
             {data == null ? getProfileInfo() :
                 <div id="profile-data">
 
@@ -40,10 +47,16 @@ function Profile(props) {
 
                 </div>}
 
-            {data != null && data.id == props.currentUser ? <UpdateAboutMe id={id} /> : null}
+            {data != null && data.id == props.currentUser ? 
+            <div id="profile-edit-options">
+                <button onClick={showHide}>Edit</button>
+                {showHideEdit && <UpdateAboutMe id={id} />}
+            </div>
+             : null}
 
             <a href={`/profile/${1}`}>Test profile 1</a><br></br>
             <a href={`/profile/${2}`}>Test profile 2</a>
+        </div>
         </>
     );
 
