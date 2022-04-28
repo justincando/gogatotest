@@ -2,15 +2,13 @@
 import { useState, useEffect } from "react";
 
 // Functional component for User Login
-function Login() {
+function Login({ currentUserId, setCurrentUserId }) {
 
   // Contains fields for User input
   const [inputFields, setInputFields] = useState({
     username: "",
     password: ""
   });
-
-  useEffect(() => console.log(inputFields), [inputFields]);
 
   // Handles input event for User fields/registration
   function getInput(event) {
@@ -43,15 +41,14 @@ function Login() {
 
     // Decide on redirection here  and user storage =====
     if (data!=0){
-      window.localStorage.setItem( "userId",data);
+      window.localStorage.setItem( "userId", data);
+      setCurrentUserId(data);
     }
-
   }
 
-  return (
+  return currentUserId > 0 ? (console.log("You are logged in ")) :  (
     <>
       <h1>Login</h1>
-
       <form onSubmit={loginUser}>
         {/* Username Field */}
         Username:{" "}
