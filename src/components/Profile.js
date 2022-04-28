@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UpdateAboutMe from "./UpdateAboutMe";
+import UpdateName from "./UpdateName";
 
 /**
  * Displays a user's profile. If the profile id matches the id of the currentUser (passed in via props.currentUser), the edit components will display.
@@ -62,12 +63,14 @@ function Profile(props) {
                 {data != null && data.id == props.currentUser ?
                     <div id="profile-edit-options">
                         <button onClick={showHide}>Edit</button>
-                        {showHideEdit && <UpdateAboutMe id={id} />}
+                        {showHideEdit &&
+                            <div>
+                                <UpdateAboutMe id={id} />
+                                <UpdateName id={id} />
+                            </div>
+                        }
                     </div>
                     : null}
-
-                <a href={`/profile/${1}`}>Test profile 1</a><br></br>
-                <a href={`/profile/${2}`}>Test profile 2</a>
             </div>
         </>
     );
