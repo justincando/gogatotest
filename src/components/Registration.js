@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import User from "../model/User";
 
 // Functional component for User Registration
-function Registration() {
+function Registration({ currentUserId}) {
   const [registerSuccess, setSuccess] = useState(false);
 
   // Contains fields for User input
@@ -54,7 +54,8 @@ function Registration() {
 
   }
   //need to check if user is logged in. if so, navigate to user profile.
-  return registerSuccess ? ( < Navigate to ="/login" />):  (
+  return window.localStorage.getItem("userId") > 0 ? (console.log("You cn't register since someone is logged in.")) :
+  (registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
       <h1>Registration</h1>
 
@@ -127,7 +128,7 @@ function Registration() {
         <button type="submit">Submit</button>
       </form>
     </>
-  );
+  ));
 }
 
 export default Registration;
