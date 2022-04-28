@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Navigate } from "react-router-dom";
 import UpdateAboutMe from "./UpdateAboutMe";
 import UpdateName from "./UpdateName";
 
@@ -43,7 +43,7 @@ function Profile(props) {
         }
     }, []);
 
-    return (
+    return props.currentUser>0 ?  (
         <>
             <div id="profile-page">
 
@@ -73,7 +73,7 @@ function Profile(props) {
                     : null}
             </div>
         </>
-    );
+    ) :( <Navigate to ="/login" /> );
 
 }
 

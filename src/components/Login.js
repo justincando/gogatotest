@@ -1,5 +1,6 @@
 // Author: Tyler, Jason, Boualem, Marcus
 import { useState, useEffect } from "react";
+import {Navigate} from "react-router-dom";
 
 // Functional component for User Login
 function Login({ currentUserId, setCurrentUserId }) {
@@ -46,7 +47,7 @@ function Login({ currentUserId, setCurrentUserId }) {
     }
   }
 
-  return currentUserId > 0 ? (console.log("You are logged in ")) :  (
+  return currentUserId > 0 ? (<Navigate to ={"/profile/"+ currentUserId }/>) :  (
     <>
       <h1>Login</h1>
       <form onSubmit={loginUser}>

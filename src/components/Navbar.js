@@ -3,30 +3,29 @@
 import { Link, Navigate } from "react-router-dom";
 export default function Navbar({ currentUserId, setCurrentUserId }) {
 
-      // checkUser();
+      checkUser();
 
-      // function checkUser()
-      // {
-      //       if (window.localStorage.getItem("userId") >= 0)
-      //       {
-      //       setCurrentUserId(window.localStorage.getItem("userId"));
-      //       }
-      //       else setCurrentUserId(0);
-      // }
+      function checkUser()
+      {
+            if (window.localStorage.getItem("userId") >= 0)
+            {
+            setCurrentUserId(window.localStorage.getItem("userId"));
+            }
+            else setCurrentUserId(0);
+      }
 
       // Handles event when logout button is pressed
     function logout() {
     window.localStorage.clear();          // Clear storage
-    setCurrentUserId(0);
-                                          // Update state for re-rendering
-    return (<Navigate to="/login" />);      // Go back to login component
+    setCurrentUserId(0);  // Update state for re-rendering
+    return <Navigate to="/login" />;      // Go back to login component
   }
 
   // If someone is logged in, link to relevant components. Otherwise, link to login and registration
   return currentUserId > 0 ? (
     <>
       <div>
-        <h3>Profile Link</h3>
+        <Link to={"/profile/"+ currentUserId } > My Profile</Link>
         <h3>Post Link</h3>
         <button onClick={logout}> Log out </button>
       </div>
