@@ -45,13 +45,11 @@ function Login() {
     if (data!=0){
       window.localStorage.setItem( "userId",data);
     }
-
   }
 
-  return (
+  return window.localStorage.getItem("userId")>0 ? (console.log("You are logged in ")) :  (
     <>
       <h1>Login</h1>
-
       <form onSubmit={loginUser}>
         {/* Username Field */}
         Username:{" "}

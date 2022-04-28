@@ -53,6 +53,7 @@ function Registration() {
     setSuccess(true);
 
   }
+  //need to check if user is logged in. if so, navigate to user profile.
   return registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
       <h1>Registration</h1>
