@@ -15,10 +15,11 @@ export default function Navbar({ currentUserId, setCurrentUserId }) {
       // }
 
       // Handles event when logout button is pressed
-  function logout() {
+    function logout() {
     window.localStorage.clear();          // Clear storage
-    setCurrentUserId(0);                  // Update state for re-rendering
-    return <Navigate to="/login" />;      // Go back to login component
+    setCurrentUserId(0);
+                                          // Update state for re-rendering
+    return (<Navigate to="/login" />);      // Go back to login component
   }
 
   // If someone is logged in, link to relevant components. Otherwise, link to login and registration

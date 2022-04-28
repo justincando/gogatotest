@@ -54,7 +54,7 @@ function Registration({ currentUserId}) {
 
   }
   //need to check if user is logged in. if so, navigate to user profile.
-  return window.localStorage.getItem("userId") > 0 ? (console.log("You cn't register since someone is logged in.")) :
+  return window.localStorage.getItem("userId") > 0 ? (<Navigate to ="/login"/>) :
   (registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
       <h1>Registration</h1>
