@@ -1,18 +1,24 @@
 import '../css/fonts.css';
 import '../css/change.css';
-import { useState } from "react"
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Change = (props) => {
 
-    console.log("we made it this far");
+    const [inputFields, setInputFields] = useState({
+        contents: props.post.contents,
+      });
 
+    function getInput(event){
+        setInputFields({
+            ...inputFields,
+            [event.target.name]: event.target.value,
+        })
+    }
 
-/**
-    const [content, setContent] = useState(props.content);
+    function onPress(e){
 
-    
-
-    async function onPress(){
+        e.preventDefault();
 
         const post = {
 
@@ -20,18 +26,20 @@ const Change = (props) => {
             headers: { 'Content-Type': 'application/json' },
 
             body: JSON.stringify({ 
-                id: props.id,
-                userid: props.userid,
-                content: props.content,
-                parent_post: props.parent_post,
+                id: props.post.id,
+                userid: props.post.userid,
+                contents: inputFields.contents,
+                parent_post: props.post.parent_post
             })
         };
 
-        await fetch('http://localhost:8081/post/', post);
-        //const response = 
-        //const data = await response.json();
-        //console.log(data);
-    }**/
+        fetch('http://localhost:8081/post', post);
+
+        //window.location.reload();
+
+        return (
+            <Navigate to = "/timeline"/>)
+    }
 
     return (
         <>
@@ -40,15 +48,17 @@ const Change = (props) => {
             <section className="changeScreen">
                 <h1>Change Message</h1>
 
-                <form action="http://localhost:8081/post" method ="put" target='_blank'>
+                <form>
 
                     <input hidden id="id" name="id" value ={props.post.id}></input>
                     <input hidden id="userid" name="userid" value ={props.post.userid}></input>
-                    <input hidden id="parent_post" name="parent_post" value ={props.post.parent_post}></input>
+                    <input hidden id="parent_post" name="parent_post" value ={props.parent_post}></input>
 
-                    <textarea required id="contents" name="contents" rows="5" cols="80" placeholder="revise text"></textarea>
+                    <textarea required id="contents" name="contents" 
+                    rows="5" cols="80" placeholder="revise text" onChange={getInput} value ={inputFields.contents}></textarea>
+
                     <br></br><br></br>
-                    <button type="submit" value="Save">Save</button>
+                    <button type="submit" value="Save" onClick={onPress}>Save</button>
                 </form>
 
             </section>

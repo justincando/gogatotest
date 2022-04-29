@@ -1,20 +1,26 @@
 
 // @Author: Brett Evans
 
-import { useParams,Navigate } from "react-router-dom";
-import { render } from "@testing-library/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import Popup from 'reactjs-popup'
 import Like from "../hooks/Like"
 import GGCreate from "./GGCreate"
 import Change from "./Change"
 
-export default function Post() {
+import '../css/App.css';
+import '../css/like.css';
+import '../css/post.css';
+
+
+export default function Post(props) {
+
+    console.log(props.currentUserId);
 
 
     const readyPostList = []
     const [rawPostList, setRawPostList] = useState([])
-    const [editing,setEditState] = useState(false)
+    //const [editing,setEditState] = useState(false)
     
     useEffect(() => {
         if (rawPostList.length === 0) {
@@ -99,12 +105,12 @@ export default function Post() {
 
     
 
-    return  (
+    return props.currentUserId>0 ?(
         <section id="post-container" className="flex-container">
             <GGCreate/>
             {readyPostList}
         </section>
-    ) 
+    )  :( <Navigate to ="/login" /> );
 }
 
 
