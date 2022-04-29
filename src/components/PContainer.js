@@ -4,7 +4,7 @@ import '../css/change.css';
 import { useParams,Navigate } from "react-router-dom";
 import React, { Component } from "react";
 import GGPosts from "./GGPosts";
-
+import CreatePost from "./CreatePost";
 
 
 class PContainer extends Component{
@@ -39,6 +39,7 @@ class PContainer extends Component{
     render() {
         return this.props.currentUserId>0 ? (
             <section>
+                <CreatePost username ={this.props.user} userid={this.props.currentUserId}/>
                 <GGPosts username ={this.props.user} post={this.state.post}/>
             </section>
         ) :( <Navigate to ="/login" /> );

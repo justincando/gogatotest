@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Popup from 'reactjs-popup'
 import Like from "../hooks/Like"
-import GGCreate from "./CreatePost"
+import CreatePost from "./CreatePost"
 import Change from "./Change"
 
 import '../css/App.css';
@@ -107,7 +107,7 @@ export default function Post(props) {
 
     return props.currentUserId>0 ?(
         <section id="post-container" className="flex-container">
-            <CreatePost/>
+             <CreatePost username ={props.user} userid={props.currentUserId}/>
             {readyPostList}
         </section>
     )  :( <Navigate to ="/login" /> );

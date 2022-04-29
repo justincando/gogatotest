@@ -39,5 +39,6 @@
   .nav-flex-container img {
       max-height: 5em;
       width: auto;
-      padding: none;
+      padding-top: .75em;
+      margin: auto;
   }

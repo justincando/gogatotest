@@ -1,3 +1,70 @@
+/* Authors: Jazib, Christian*/
+
+/* General page stlying */
 #profile-page{
     text-align: center;
+}
+
+#profile-data{
+  
+  height:320px; 
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  padding: 1rem;
+  width: 30rem;
+  background: rgba(243, 150, 9, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(20, 20, 20);
+  text-align: center;
+
+    
+}
+
+/* Edit profile button style */
+#profile-edit-options{
+    
+    /* We will add to this later  */
+}
+/* ---------------------- */
+
+/* Parent div for the next few functions */
+#update-parent{
+    padding: 10px 0px 10px 0px;
+
+}
+
+/* About me specific style */
+.update-aboutMe-area{
+  height:200px; 
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  padding: 1rem;
+  width: 30rem;
+  background: rgba(185, 185, 186, 0.842);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(20, 20, 20);
+  text-align: center;
+}
+
+/* Name area specific style */
+.update-name-area{
+    height:200px; 
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 1rem;
+  width: 30rem;
+  background: rgba(185, 185, 186, 0.842);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(20, 20, 20);
+  text-align: center;
+    
+}
+
+/* Margin and padding for the name area styling */
+.update-name-area input, button{
+    margin: 8px 0px;
+    /* padding-top:px; */
 }

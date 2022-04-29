@@ -5,7 +5,8 @@ import Navbar from "./components/Navbar";
 import PContainer from "./components/PContainer";
 import { useState } from "react";
 import Profile from './components/Profile';
-import PostDisplayTest from './components/PostDisplayTest'
+import Post from './components/Post'
+import './css/navi.css';
 
 
 function App() {
@@ -38,9 +39,7 @@ function App() {
 
         <Route exact path="/profile/:id" element={<Profile currentUser={currentUserId} />} />
         <Route path="/myposts" element={<PContainer currentUserId={currentUserId} user={user} />}/>
-        <Route path="/timeline" element={<PostDisplayTest currentUserId={currentUserId} user={user} />}/>
-
-
+        <Route path="/timeline" element={<Post currentUserId={currentUserId}/>}/>
 
       </Routes>
     </BrowserRouter>
