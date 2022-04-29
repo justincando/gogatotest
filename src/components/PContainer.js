@@ -39,7 +39,6 @@ class PContainer extends Component{
     render() {
         return this.props.currentUserId>0 ? (
             <section>
-                
                 <GGPosts username ={this.props.user} post={this.state.post}/>
             </section>
         ) :( <Navigate to ="/login" /> );

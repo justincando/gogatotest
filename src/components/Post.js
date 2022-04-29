@@ -1,6 +1,7 @@
 
 // @Author: Brett Evans
 
+import { useParams,Navigate } from "react-router-dom";
 import { render } from "@testing-library/react"
 import { useEffect, useState } from "react"
 import Popup from 'reactjs-popup'
@@ -22,15 +23,12 @@ export default function Post() {
         
     }, [rawPostList])
 
-    const editContent = () => {
-        (<Change/>)
-    }
 
     const getCommentsByParentId = (id) => {
         const commentList = []
         rawPostList.forEach(element => {
             if (element.parentid == id) {
-                console.log(element)
+                //console.log(element)
                 commentList.push(
                     <li key={element.id}>
                         <article  className="comment" >
@@ -43,7 +41,7 @@ export default function Post() {
                                 <div className="flex-container">
                                     <Like />
                                     <Popup trigger={<button>Edit</button>} modal nested>
-                                        <Change/>
+                                        <Change post = {element}/>
                                     </Popup>
                                 </div>
                             </div>
@@ -53,7 +51,7 @@ export default function Post() {
                 )
             }
         });
-        console.log(commentList)
+        //console.log(commentList)
         return commentList
     }
 
@@ -72,7 +70,7 @@ export default function Post() {
                                 <div className="flex-container">
                                     <Like />
                                     <Popup trigger={<button>Edit</button>} modal nested>
-                                        <Change/>
+                                        <Change post = {rawPostList[i]}/>
                                     </Popup>
                                 </div>    
                             </div>
@@ -96,12 +94,12 @@ export default function Post() {
     
     if (rawPostList.length !== 0 && readyPostList == 0) {
         displayPosts(rawPostList)
-        console.log(rawPostList)
+        //console.log(rawPostList)
     }
 
     
 
-    return (
+    return  (
         <section id="post-container" className="flex-container">
             <GGCreate/>
             {readyPostList}
