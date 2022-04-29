@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams,Navigate } from "react-router-dom";
 import UpdateAboutMe from "./UpdateAboutMe";
 import UpdateName from "./UpdateName";
+import '../css/profile.css';
 
 /**
  * Displays a user's profile. If the profile id matches the id of the currentUser (passed in via props.currentUser), the edit components will display.

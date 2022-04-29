@@ -1,9 +1,10 @@
 // Author: Tyler, Jason, Boualem, Marcus
+import '../css/navi.css';
 import { useState, useEffect } from "react";
 import {Navigate} from "react-router-dom";
 
 // Functional component for User Login
-function Login({ currentUserId, setCurrentUserId }) {
+function Login({ currentUserId, setCurrentUserId, setUser }) {
 
   // Contains fields for User input
   const [inputFields, setInputFields] = useState({
@@ -44,6 +45,10 @@ function Login({ currentUserId, setCurrentUserId }) {
     if (data!=0){
       window.localStorage.setItem( "userId", data);
       setCurrentUserId(data);
+      window.localStorage.setItem( "username", userInfo.username);
+      console.log(userInfo.username);
+      setUser(userInfo.username);
+      
     }
   }
 

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/index.css";
+import './css/navi.css';
+import "./css/fonts.css";
 import App from "./App";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
