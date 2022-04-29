@@ -1,20 +1,38 @@
-import './css/fonts.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Navbar from './components/Navbar';
+import "./css/fonts.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Registration from "./components/Registration";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
+import Profile from './components/Profile';
 
 function App() {
+  const [currentUserId, setCurrentUserId] = useState(0); // Tracks current user Id, along with localstorage in login/registration components
+
   return (
     <BrowserRouter>
 
-    <Navbar />  {/* Navbar, shown at all times */}
+      <Navbar
+        currentUserId={currentUserId}
+        setCurrentUserId={setCurrentUserId}
+      />
+      <Routes>
+        <Route
+          path="/registration"
+          element={<Registration currentUserId={currentUserId} />}
+        />
+        <Route
+          path="/login"
+          element={
+            <Login
+              currentUserId={currentUserId}
+              setCurrentUserId={setCurrentUserId}
+            />
+          }
+        />
 
-    <Routes>
-
-      {/* Route the different components here */}
-      <Route path='/' element={/* Component to route to */ null} />
-
-    </Routes>
-
+        <Route exact path="/profile/:id" element={<Profile currentUser={currentUserId} />} />
+      </Routes>
     </BrowserRouter>
   );
 }

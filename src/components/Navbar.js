@@ -1,20 +1,42 @@
-import {Link} from 'react-router-dom';
+// Author: Tyler, Jason, Boualem, Marcus
 
+import { Link, Navigate } from "react-router-dom";
+export default function Navbar({ currentUserId, setCurrentUserId }) {
 
-export default function Navbar()
-{
+      checkUser();
 
-    // Conditional render whether to show Login/Register or My Profile/Posts
-    return(
-        <>
-        <div>
-            <h3>Navbar Title</h3>
+      function checkUser()
+      {
+            if (window.localStorage.getItem("userId") >= 0)
+            {
+            setCurrentUserId(window.localStorage.getItem("userId"));
+            }
+            else setCurrentUserId(0);
+      }
 
-            {/* 'Link' to the different tab/page/component 'Route' */}
-            <Link to='/'>Component 1</Link>
-            <Link to='/'>Component 2</Link>
+      // Handles event when logout button is pressed
+    function logout() {
+    window.localStorage.clear();          // Clear storage
+    setCurrentUserId(0);  // Update state for re-rendering
+    return <Navigate to="/login" />;      // Go back to login component
+  }
 
-        </div>
-        </>
-    );
+  // If someone is logged in, link to relevant components. Otherwise, link to login and registration
+  return currentUserId > 0 ? (
+    <>
+      <div>
+        <Link to={"/profile/"+ currentUserId } > My Profile</Link>
+        <h3>Post Link</h3>
+        <button onClick={logout}> Log out </button>
+      </div>
+    </>
+  ) : (
+    <>
+      <div>
+        <Link to="/login"> Login</Link>
+        <Link to="/registration"> Register</Link>
+        <button onClick={logout}> Log out </button>
+      </div>
+    </>
+  );
 }
