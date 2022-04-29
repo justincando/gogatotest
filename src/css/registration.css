@@ -1,0 +1,27 @@
+/* Authors: Jazib, Christian*/
+
+/* General page stlying */
+#registration-page{
+    text-align: center;
+}
+
+/* ignore for now testing */
+#regi{
+    text-align: left;
+}
+
+#registration-data{
+  
+  height:440px; 
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  padding: 1rem;
+  width: 30rem;
+  background: rgba(243, 150, 9, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(20, 20, 20);
+  text-align: center;
+
+    
+}

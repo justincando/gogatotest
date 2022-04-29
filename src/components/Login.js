@@ -2,6 +2,7 @@
 import '../css/navi.css';
 import { useState, useEffect } from "react";
 import {Navigate} from "react-router-dom";
+import '../css/login.css';
 
 // Functional component for User Login
 function Login({ currentUserId, setCurrentUserId, setUser }) {
@@ -54,8 +55,11 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
 
   return currentUserId > 0 ? (<Navigate to ={"/profile/"+ currentUserId }/>) :  (
     <>
+    <div id= "login-page">
+    <div id="login-data">
       <h1>Login</h1>
       <form onSubmit={loginUser}>
+      <br /><br />
         {/* Username Field */}
         Username:{" "}
         <input
@@ -66,7 +70,7 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* Password Field */}
         Password:{" "}
         <input
@@ -77,10 +81,12 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br /><br />
         
         <button type="submit">Login</button>
       </form>
+      </div>
+      </div>
     </>
   );
 }

@@ -2,6 +2,8 @@
 import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import User from "../model/User";
+import '../css/registration.css';
+
 
 // Functional component for User Registration
 function Registration({ currentUserId}) {
@@ -57,10 +59,14 @@ function Registration({ currentUserId}) {
   return window.localStorage.getItem("userId") > 0 ? (<Navigate to ="/login"/>) :
   (registerSuccess ? ( < Navigate to ="/login" />):  (
     <>
+    <div id= "registration-page">
+    <div id="registration-data">
       <h1>Registration</h1>
 
       <form onSubmit={submitNewUser}>
         {/* Username Field */}
+        <br />
+
         Username:{" "}
         <input
           type="text"
@@ -70,7 +76,8 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
+
         {/* Password Field */}
         Password:{" "}
         <input
@@ -81,7 +88,7 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* First Name Field */}
         First Name:{" "}
         <input
@@ -92,7 +99,7 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* Last Name Field */}
         Last Name:{" "}
         <input
@@ -103,7 +110,7 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* Email Field */}
         Email:{" "}
         <input
@@ -114,7 +121,7 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* About Me Field */}
         <textarea
           name="aboutMe"
@@ -124,9 +131,11 @@ function Registration({ currentUserId}) {
           onChange={getInput}
           required
         ></textarea>
-        <br />
+        <br /><br />
         <button type="submit">Submit</button>
       </form>
+      </div>
+      </div>
     </>
   ));
 }
