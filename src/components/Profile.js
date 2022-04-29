@@ -65,7 +65,8 @@ function Profile(props) {
                     <div id="profile-edit-options">
                         <button onClick={showHide}>Edit</button>
                         {showHideEdit &&
-                            <div>
+                            <div id = "update-parent">
+                        
                                 <UpdateAboutMe id={id} />
                                 <UpdateName id={id} />
                             </div>
