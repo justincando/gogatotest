@@ -7,7 +7,7 @@ const GGPosts = props => {
         return props.post.map(post => {
             
             if (post.contents.toLowerCase().includes(props.hashtag.toLowerCase())) 
-                return (<GGMessage contents = {post.contents} time = {post.post_time}/>);
+                return (<GGMessage key ={post.id} contents = {post.contents} time = {post.post_time}/>);
 
             else{return (<></>)}
         });

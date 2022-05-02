@@ -9,7 +9,7 @@ const GGPosts = props => {
     const displayPosts = () => {
         return props.post.map(post => {
 
-            return (<GGMessage usr = {props.username} contents = {post.contents} time = {post.post_time}/>);
+            return (<GGMessage key ={post.id} usr = {props.username} contents = {post.contents} time = {post.post_time}/>);
 
         });
     };

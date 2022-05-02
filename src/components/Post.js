@@ -7,6 +7,7 @@ import Popup from 'reactjs-popup'
 import Like from "../hooks/Like"
 import CreatePost from "./CreatePost"
 import Change from "./Change"
+import Delete from "./Delete"
 
 import '../css/App.css';
 import '../css/like.css';
@@ -43,6 +44,7 @@ export default function Post(props) {
                                 <p>{element.content}</p>
                                 <div className="flex-container">
                                     <Like />
+                                    <Delete post = {element}/>
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {element}/>
                                     </Popup>

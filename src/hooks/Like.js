@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import blankLike from './../images/BlankLikeGGs.png'
 import { useState } from "react";
 import blankDislike from './../images/BlankDislikeGGs.png'

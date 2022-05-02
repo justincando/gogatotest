@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import React, { Component } from "react";
 import GGPosts from "./GGPosts";
-import "../../css/change.css";
+import "../../css/trend.css";
 
 
 class Trend extends Component{
