@@ -113,9 +113,9 @@ button, input[type="submit"]{
 }
 
     
-button:hover {
+button:hover, input[type="submit"] {
         padding: 25px color black;
-        opacity: 0.9;
+        opacity: 0.85;
         cursor: pointer;
         transition: all 200ms ease-in-out;
 }
