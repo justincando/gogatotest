@@ -1,38 +1,53 @@
 import '../css/fonts.css';
 import '../css/change.css';
+import { useState } from "react";
 
 
 const GGReply = (props) => {
 
-    function getUsername(){
-        return window.localStorage.getItem("username");
+    const [inputFields, setInputFields] = useState({contents: ""});
+
+    function getInput(event){
+        setInputFields({...inputFields, [event.target.name]: event.target.value,})
+    }
+
+    function onPress(e){
+
+        e.preventDefault();
+
+        const post = {
+
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+
+            body: JSON.stringify({ 
+                userid: props.userid,
+                contents: inputFields.contents,
+                parentid: props.post.id
+            })
+        };
+
+        fetch('http://localhost:8081/post/create', post);
+        window.location.reload();
     }
 
     return (
         <>
-            <section className="">
-                <h1>Create Message</h1>
+            <div className="blur"></div>
+            <section className='changeScreen'>
+                <h1>Reply</h1>
 
-                <form id='createPostForm' className='flex-container' action="/post" method ="post">
+                <form>
+                    <textarea required id="contents" name="contents" 
+                    rows="5" cols="80" placeholder="revise text" 
+                    onChange={getInput} value ={inputFields.contents}></textarea>
 
-                    <input hidden id="id" name="id" value ={props.post.id}></input>
-                    <input hidden id="userid" name="userid" value ={getUsername}></input>
-                    <input hidden id="parent_post" name="parent_post" value ={props.post.id}></input>
-
-                    <input hidden id="likes" name="likes" value = "1"></input>
-                    <input hidden id="parentid" name="parentid" value ="0"></input>
-
-                    <textarea required id="contents" name="contents" rows="3" cols="120" placeholder="What on your mind?"></textarea>
-                    {/* <br></br><br></br> */}
-                    <input type="submit" value="Post"></input>
-                    
+                    <br></br><br></br>
+                    <button type="submit" value="Save" onClick={onPress}>Post</button>       
                 </form>
-
             </section>
         </>
     );
 }
 
 export default GGReply;
-
-// <input hidden id="userid" name="userid" value = {window.user.userid}></input> //places this on line 14 when window user object is created.

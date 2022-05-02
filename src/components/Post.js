@@ -7,6 +7,7 @@ import Popup from 'reactjs-popup';
 import Like from "../hooks/Like";
 import Change from "./Change";
 import Delete from "./Delete";
+import GGReply from "./GGReply";
 import CreatePost from "./CreatePost";
 
 
@@ -49,7 +50,9 @@ export default function Post(props) {
                                     <Like />
                                     <Delete post = {element} auth = {props.currentUserId}></Delete>
                                     <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
-
+                                    <Popup trigger={<button>Reply</button>} modal nested>
+                                        <GGReply userid ={props.currentUserId} post = {element}/>
+                                    </Popup>
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {element}/>
                                     </Popup>
@@ -80,6 +83,9 @@ export default function Post(props) {
                                 <div className="flex-container">
                                     <Like likeToChild={rawPostList[i].likes} postIdToChild={rawPostList[i].id} contentToChild={rawPostList[i].contents} userIdToChild={props.currentUserId} postUserIdToChild={rawPostList[i].userid}/>
                                     <Delete post = {rawPostList[i]} auth = {props.currentUserId}></Delete>
+                                    <Popup trigger={<button>Reply</button>} modal nested>
+                                        <GGReply userid ={props.currentUserId} post = {rawPostList[i]}/>
+                                    </Popup>
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {rawPostList[i]}/>
                                     </Popup>
