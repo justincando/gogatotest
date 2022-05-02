@@ -2,7 +2,11 @@ import '../css/fonts.css';
 import '../css/change.css';
 
 
-const GGCreate = (props) => {
+const GGReply = (props) => {
+
+    function getUsername(){
+        return window.localStorage.getItem("username");
+    }
 
     return (
         <>
@@ -10,6 +14,10 @@ const GGCreate = (props) => {
                 <h1>Create Message</h1>
 
                 <form id='createPostForm' className='flex-container' action="/post" method ="post">
+
+                    <input hidden id="id" name="id" value ={props.post.id}></input>
+                    <input hidden id="userid" name="userid" value ={getUsername}></input>
+                    <input hidden id="parent_post" name="parent_post" value ={props.post.id}></input>
 
                     <input hidden id="likes" name="likes" value = "1"></input>
                     <input hidden id="parentid" name="parentid" value ="0"></input>
@@ -25,6 +33,6 @@ const GGCreate = (props) => {
     );
 }
 
-export default GGCreate;
+export default GGReply;
 
 // <input hidden id="userid" name="userid" value = {window.user.userid}></input> //places this on line 14 when window user object is created.

@@ -1,19 +1,26 @@
 
 // @Author: Brett Evans
 
-import { render } from "@testing-library/react"
-import { useEffect, useState } from "react"
-import Popup from 'reactjs-popup'
-import Like from "../hooks/Like"
-import GGCreate from "./GGCreate"
-import Change from "./Change"
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import Like from "../hooks/Like";
+import Change from "./Change";
+import Delete from "./Delete";
+import CreatePost from "./CreatePost";
 
-export default function Post() {
 
+
+import '../css/App.css';
+import '../css/like.css';
+import '../css/post.css';
+
+
+export default function Post(props) {
 
     const readyPostList = []
     const [rawPostList, setRawPostList] = useState([])
-    const [editing,setEditState] = useState(false)
+
     
     useEffect(() => {
         if (rawPostList.length === 0) {
@@ -22,15 +29,12 @@ export default function Post() {
         
     }, [rawPostList])
 
-    const editContent = () => {
-        (<Change/>)
-    }
 
     const getCommentsByParentId = (id) => {
         const commentList = []
         rawPostList.forEach(element => {
             if (element.parentid == id) {
-                console.log(element)
+                //console.log(element)
                 commentList.push(
                     <li key={element.id}>
                         <article  className="comment" >
@@ -41,9 +45,13 @@ export default function Post() {
                                 </div>
                                 <p>{element.content}</p>
                                 <div className="flex-container">
+
                                     <Like />
+                                    <Delete post = {element}/>
+                                    <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
+
                                     <Popup trigger={<button>Edit</button>} modal nested>
-                                        <Change/>
+                                        <Change post = {element}/>
                                     </Popup>
                                 </div>
                             </div>
@@ -53,7 +61,7 @@ export default function Post() {
                 )
             }
         });
-        console.log(commentList)
+        //console.log(commentList)
         return commentList
     }
 
@@ -68,11 +76,11 @@ export default function Post() {
                                     <h4>{rawPostList[i].userid}</h4>
                                     <h4>{rawPostList[i].post_time}</h4>
                                 </div>
-                                    <p>{rawPostList[i].contents}</p>
+                                    <p><pre>{rawPostList[i].contents}</pre></p>
                                 <div className="flex-container">
-                                    <Like />
+                                    <Like likeToChild={rawPostList[i].likes} postIdToChild={rawPostList[i].id} contentToChild={rawPostList[i].contents} userIdToChild={props.currentUserId} postUserIdToChild={rawPostList[i].userid}/>
                                     <Popup trigger={<button>Edit</button>} modal nested>
-                                        <Change/>
+                                        <Change post = {rawPostList[i]}/>
                                     </Popup>
                                 </div>    
                             </div>
@@ -96,17 +104,17 @@ export default function Post() {
     
     if (rawPostList.length !== 0 && readyPostList == 0) {
         displayPosts(rawPostList)
-        console.log(rawPostList)
+        //console.log(rawPostList)
     }
 
     
 
-    return (
+    return props.currentUserId>0 ?(
         <section id="post-container" className="flex-container">
-            <GGCreate/>
+             <CreatePost username ={props.user} userid={props.currentUserId}/>
             {readyPostList}
         </section>
-    ) 
+    )  :( <Navigate to ="/login" /> );
 }
 
 

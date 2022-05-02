@@ -1,22 +1,21 @@
-import '../css/fonts.css';
-import '../css/post.css';
-
 import { Navigate } from "react-router-dom";
 import React, { Component } from "react";
 import GGPosts from "./GGPosts";
-//import CreatePost from "./CreatePost";
+import "../../css/trend.css";
 
 
-class PContainer extends Component{
+class Trend extends Component{
     constructor(){
         super();
         this.state = {post: [], hashtag: ""};
     }
 
+    handleChange = event => {this.setState({ hashtag: event.target.value});}
+
     componentDidMount(){
 
         var API_URL = "http://localhost:8081";
-        API_URL = API_URL + "/post/userid/" + this.props.currentUserId;
+        API_URL = API_URL + "/post/";
 
         fetch(API_URL,{
         method: "get",
@@ -36,11 +35,17 @@ class PContainer extends Component{
     render() {
         return this.props.currentUserId>0 ? (
             <section>
-                
-                <GGPosts username ={this.props.user} post={this.state.post}/>
+                <div className="searchBox">
+                    <label>Search for Trend: </label>
+                    <input type="text" onChange = {this.handleChange} value={this.state.hashtag}/>
+                </div>
+
+                <GGPosts hashtag = {this.state.hashtag} post={this.state.post}/>
+                <div className="genericFooter"></div>
             </section>
+            
         ) :( <Navigate to ="/login" /> );
     }
 }
 
-export default PContainer;
+export default Trend;

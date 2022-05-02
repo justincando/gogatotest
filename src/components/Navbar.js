@@ -30,23 +30,27 @@ export default function Navbar({ currentUserId, setCurrentUserId, setUser }) {
   return currentUserId > 0 ? (
     <>
 
-        <div class="nav-flex-container">
-          <div class="left"><img alt="GG Logo" src='https://raw.githubusercontent.com/Revature-GoGato/GoGatoFrontEnd/development/public/logo/ggs.png'></img></div>
+        <div className="nav-flex-container">
+          <div className="left"><img alt="GG Logo" src='https://raw.githubusercontent.com/Revature-GoGato/GoGatoFrontEnd/development/public/logo/ggs.png'></img></div>
 
-        <div class="right">
-          <div class="flex-item"><Link to={"/profile/"+ currentUserId}>Settings</Link></div>
-          <div class="flex-item"><Link to="/myposts">Posts</Link></div>
-          <div class="flex-item"><Link to="/timeline">Timeline</Link></div>
-          <div class="flex-item"><button className='logout'  onClick={logout}>Log Out</button></div>
+        <div className="right">
+          <div className="flex-item"><Link to={"/profile/"+ currentUserId}>Settings</Link></div>
+          <div className="flex-item"><Link to="/myposts">Posts</Link></div>
+          <div className="flex-item"><Link to="/trends">Trends</Link></div>
+          <div className="flex-item"><Link to="/timeline">Timeline</Link></div>
+          <div className="flex-item"><button className='logout'  onClick={logout}>Log Out</button></div>
         </div>
         </div>
     </>
   ) : (
     <>
-      <div>
-        <Link to="/login"> Login</Link>
-        <Link to="/registration"> Register</Link>
-        <button onClick={logout}> Log out </button>
+      <div className="nav-flex-container">
+          <div className="left"><img alt="GG Logo" src='https://raw.githubusercontent.com/Revature-GoGato/GoGatoFrontEnd/development/public/logo/ggs.png'></img></div>
+        
+          <div className="right">
+            <div className="flex-item"><Link to="/login"> Login</Link></div>
+            <div className="flex-item"><Link to="/registration"> Register</Link></div>
+          </div>
       </div>
     </>
   );
