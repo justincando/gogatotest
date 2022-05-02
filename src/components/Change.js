@@ -35,10 +35,8 @@ const Change = (props) => {
 
         fetch('http://localhost:8081/post', post);
 
-        //window.location.reload();
-
-        return (
-            <Navigate to = "/timeline"/>)
+        window.location.reload();
+        return (<Navigate to = "/timeline"/>);
     }
 
     return (
@@ -55,7 +53,8 @@ const Change = (props) => {
                     <input hidden id="parent_post" name="parent_post" value ={props.parent_post}></input>
 
                     <textarea required id="contents" name="contents" 
-                    rows="5" cols="80" placeholder="revise text" onChange={getInput} value ={inputFields.contents}></textarea>
+                    rows="5" cols="80" placeholder="revise text" 
+                    onChange={getInput} value ={inputFields.contents}></textarea>
 
                     <br></br><br></br>
                     <button type="submit" value="Save" onClick={onPress}>Save</button>

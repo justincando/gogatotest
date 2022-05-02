@@ -1,19 +1,14 @@
-import '../css/fonts.css';
 import React from 'react';
 
 const GGMessage = (props) => {
 
-    
-
     return( 
-        <div className='post'>
-            <h4>{props.usr}</h4>
-
+        <div className='ggMessage'>
             <p>Post:{props.contents}
                 <br></br><br></br>
                Time: {props.time}</p>
 
-            <a href="#">Review Comments</a>
+            <a href="/myposts">Review Comments</a>
         </div>     
     )
 }

@@ -3,8 +3,8 @@ import React from 'react';
 import GGMessage from "./GGMessage";
 
 const GGPosts = props => {
-    console.log(props.username);
-    console.log(props);
+    //console.log(props.username);
+    //console.log(props);
 
     const displayPosts = () => {
         return props.post.map(post => {
@@ -14,7 +14,7 @@ const GGPosts = props => {
         });
     };
 
-    return (<div className="ggPosts">{displayPosts()}</div>)
+    return (<div id="post-container" className="flex-container">{displayPosts()}</div>)
 }
 
 export default GGPosts;

@@ -15,12 +15,9 @@ import '../css/post.css';
 
 export default function Post(props) {
 
-    console.log(props.currentUserId);
-
-
     const readyPostList = []
     const [rawPostList, setRawPostList] = useState([])
-    //const [editing,setEditState] = useState(false)
+
     
     useEffect(() => {
         if (rawPostList.length === 0) {
@@ -72,7 +69,7 @@ export default function Post(props) {
                                     <h4>{rawPostList[i].userid}</h4>
                                     <h4>{rawPostList[i].post_time}</h4>
                                 </div>
-                                    <p>{rawPostList[i].contents}</p>
+                                    <p><pre>{rawPostList[i].contents}</pre></p>
                                 <div className="flex-container">
                                     <Like />
                                     <Popup trigger={<button>Edit</button>} modal nested>

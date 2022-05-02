@@ -42,3 +42,8 @@
       padding-top: .75em;
       margin: auto;
   }
+
+  a:visited { 
+    text-decoration: none; 
+    color: inherit; 
+   }

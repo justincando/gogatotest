@@ -50,7 +50,7 @@
 
 /* Name area specific style */
 .update-name-area{
-    height:200px; 
+  height:200px; 
   margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
@@ -59,12 +59,11 @@
   background: rgba(185, 185, 186, 0.842);
   border-radius: 10px;
   box-shadow: 0 0 20px rgb(20, 20, 20);
-  text-align: center;
-    
+  text-align: center;    
 }
 
 /* Margin and padding for the name area styling */
 .update-name-area input, button{
-    margin: 8px 0px;
-    /* padding-top:px; */
+  margin: 8px 0px;
+  /* padding-top:px; */
 }
