@@ -1,0 +1,63 @@
+.parent{
+    display: flex;
+    flex-direction: row;
+}
+
+.lastpost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 100%;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.item {
+    text-align: center;
+    line-height: 450px;
+    width: 600px;
+    padding: 2rem 1rem;
+    border: 3px solid black;
+    color: 3px solid black;
+    margin: 0rem;
+}
+
+.minoritem{
+    text-align: center;
+    line-height: 300px;
+    width: 500px;
+    padding: 2rem 1rem;
+    border: 3px solid black;
+    color: 3px solid black;
+    margin: 0.25rem;
+}
+
+.title {
+    margin: auto;
+    width: 5%;
+    border: px solid green;
+    padding: 10px;
+}
+
+.fixedleft{
+    position:fixed;
+    top: 190px;
+    left: 50px;
+}
+
+.fixedright{
+    position:fixed;
+    top: 190px;
+    right: 50px;
+}
