@@ -45,7 +45,7 @@ export default function Post(props) {
                 for (let j = 0; j < rawUserList.length; j++) {
                     if (rawUserList[j].id == id) {
                         username = rawUserList[j].username
-                        continue;
+                        break;
                     }
                 }
                 commentList.push(
@@ -53,8 +53,8 @@ export default function Post(props) {
                         <article  className="comment" >
                             <div id={"comment" + element.id} >
                                 <div className="flex-container post-header">
-                                    <h5>{username}</h5>
-                                    <h5>{element.post_time}</h5>
+                                    <h4>{username}</h4>
+                                    <h4>{element.post_time}</h4>
                                 </div>
                                 <p>{element.content}</p>
                                 <div className="flex-container">
@@ -88,7 +88,7 @@ export default function Post(props) {
                     for (let j = 0; j < rawUserList.length; j++) {
                         if (rawUserList[j].id == rawPostList[i].userid) {
                             username = rawUserList[j].username
-                            continue;
+                            break;
                         }
                     }
                     readyPostList.push(

@@ -188,6 +188,10 @@ li {
 }
   
 .post-header {
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.post-header h4 {
+    text-decoration: underline solid 2px darkblue;
 }
   
