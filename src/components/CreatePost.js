@@ -36,9 +36,9 @@ const CreatePost = (props) => {
    return (
       <>
          <form onSubmit={handleSubmit} className="center">
-            <label htmlFor="post input"><h3>What would you like to share? 📝</h3></label><br></br>
-            <input type="textarea" name={postContent} onChange={handleChange} autoFocus ></input>
-            <input type="submit" name="Create Post" ></input>
+            <p><label htmlFor="post input"><h3>What would you like to share? 📝</h3></label></p>
+            <p><input className="center" type="textarea" name={postContent} onChange={handleChange} autoFocus ></input></p>
+            <p><input type="submit" name="Create Post" ></input></p>
          </form>
       </>
    )
