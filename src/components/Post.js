@@ -21,7 +21,7 @@ export default function Post(props) {
 
     const readyPostList = []
     const [rawPostList, setRawPostList] = useState([])
-
+    const [rawUserList, setRawUserList] = useState([])
     
     useEffect(() => {
         if (rawPostList.length === 0) {
@@ -30,18 +30,30 @@ export default function Post(props) {
         
     }, [rawPostList])
 
+    useEffect(() => {
+        if (rawUserList.length === 0) {
+            fetch("http://localhost:8000/users").then(resp => resp.json()).then(data => setRawUserList(data))
+        }
+        
+    }, []) 
 
     const getCommentsByParentId = (id) => {
         const commentList = []
         rawPostList.forEach(element => {
             if (element.parentid == id) {
-                //console.log(element)
+                let username = ""
+                for (let j = 0; j < rawUserList.length; j++) {
+                    if (rawUserList[j].id == id) {
+                        username = rawUserList[j].username
+                        continue;
+                    }
+                }
                 commentList.push(
                     <li key={element.id}>
                         <article  className="comment" >
                             <div id={"comment" + element.id} >
                                 <div className="flex-container post-header">
-                                    <h5>{element.userid}</h5>
+                                    <h5>{username}</h5>
                                     <h5>{element.post_time}</h5>
                                 </div>
                                 <p>{element.content}</p>
@@ -72,11 +84,18 @@ export default function Post(props) {
         for (let i = 0; i < rawPostList.length; i++) {
             try {
                 if (rawPostList[i].parentid === 0) {
+                    let username = ""
+                    for (let j = 0; j < rawUserList.length; j++) {
+                        if (rawUserList[j].id == rawPostList[i].userid) {
+                            username = rawUserList[j].username
+                            continue;
+                        }
+                    }
                     readyPostList.push(
                         <article  key={rawPostList[i].id}>
                             <div className="post" id={"post" + rawPostList[i].id} >
                                 <div className="flex-container post-header">
-                                    <h4>{rawPostList[i].userid}</h4>
+                                    <h4>{username}</h4>
                                     <h4>{rawPostList[i].post_time}</h4>
                                 </div>
                                     <p><pre>{rawPostList[i].contents}</pre></p>
