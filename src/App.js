@@ -10,6 +10,7 @@ import Post from './components/Post';
 import Trend from './components/Trending/Trend';
 
 import './css/navi.css';
+import './css/fonts.css';
 
 function App() {
   const [currentUserId, setCurrentUserId] = useState(0); // Tracks current user Id, along with localstorage in login/registration components
