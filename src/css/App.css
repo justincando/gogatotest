@@ -36,7 +36,7 @@ html, body, #root, .App {
 /*Here's the button itself. Can change each individual just by className
 but for the sake of org here's the main css for all buttons.
 */
-button{  
+button, input[type="submit"]{  
   /* display: flex; */
   /* margin: 100px auto; 
   background-color: #2d09fa;*/

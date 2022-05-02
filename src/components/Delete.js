@@ -2,8 +2,8 @@ import '../css/fonts.css';
 
 const Delete = (props) => {
 
-    console.log(props.auth);
-    console.log(props.post.userid);
+    // console.log(props.auth);
+    // console.log(props.post.userid);
 
     function onPress(){
         const post = {

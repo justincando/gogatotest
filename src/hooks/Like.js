@@ -63,6 +63,7 @@ export default function Like(likeToChild){
             const userJSON=JSON.stringify(users);
             // For not multi computer enviroment Change 192.168.1.126 =>localhost! 
             // if multi computer enviroment change 192.168.1.126 to what you have as you network gateway
+
             fetch(`http://localhost:8000/users/${postUserId}/points`, { 
                 method:"PUT",
                 headers:{
@@ -138,7 +139,7 @@ export default function Like(likeToChild){
                         
 
                     }else if(i[j].like_state === 2 && i[j].postid === likeToChild.postIdToChild){ 
-                        console.log(i)
+                        // console.log(i)
                         //if state 2 is on like is blank. Dislike is filled and state off is true
                         setLImage(blankLike);
                         setDImage(filledDislike);
