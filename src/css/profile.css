@@ -64,6 +64,8 @@
 
 /* Margin and padding for the name area styling */
 .update-name-area input, button{
+
   margin: 8px 0px;
   /* padding-top:px; */
+
 }
