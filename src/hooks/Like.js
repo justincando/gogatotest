@@ -31,7 +31,7 @@ export default function Like(likeToChild){
                 id : likeToChild.postIdToChild,
                 contents: likeToChild.contentToChild,
                 likes : likes,
-                userid : likeToChild.userIdToChild,
+                userid : likeToChild.postUserIdToChild,
                 parentid: 0,
 
             };
