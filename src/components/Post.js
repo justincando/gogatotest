@@ -2,10 +2,14 @@
 // @Author: Brett Evans
 
 import { useEffect, useState } from "react";
-import Popup from 'reactjs-popup'
-import Like from "../hooks/Like"
-import Change from "./Change"
-import Delete from "./Delete"
+import { Navigate } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import Like from "../hooks/Like";
+import Change from "./Change";
+import Delete from "./Delete";
+import CreatePost from "./CreatePost";
+
+
 
 import '../css/App.css';
 import '../css/like.css';
@@ -45,6 +49,7 @@ export default function Post(props) {
                                     <Like />
                                     <Delete post = {element}/>
                                     <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
+
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {element}/>
                                     </Popup>
