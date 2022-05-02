@@ -2,10 +2,8 @@
 // @Author: Brett Evans
 
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import Popup from 'reactjs-popup'
 import Like from "../hooks/Like"
-import CreatePost from "./CreatePost"
 import Change from "./Change"
 import Delete from "./Delete"
 
@@ -43,12 +41,10 @@ export default function Post(props) {
                                 </div>
                                 <p>{element.content}</p>
                                 <div className="flex-container">
-<<<<<<< HEAD
+
                                     <Like />
                                     <Delete post = {element}/>
-=======
                                     <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
->>>>>>> 1ae2a962a1a2a654d4fd0264e2859dd2ad7e95e0
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {element}/>
                                     </Popup>
