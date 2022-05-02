@@ -2,6 +2,9 @@ import '../css/fonts.css';
 
 const Delete = (props) => {
 
+    console.log(props.auth);
+    console.log(props.post.userid);
+
     function onPress(){
         const post = {
 
@@ -20,7 +23,8 @@ const Delete = (props) => {
         window.location.reload();
     }
 
-    return (<button onClick={onPress}>Delete</button>);
+    if (props.auth == props.post.userid) return (<button onClick={onPress}>Delete</button>);
+    return (<></>);
 }
 
 export default Delete;

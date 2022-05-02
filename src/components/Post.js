@@ -47,7 +47,7 @@ export default function Post(props) {
                                 <div className="flex-container">
 
                                     <Like />
-                                    <Delete post = {element}/>
+                                    <Delete post = {element} auth = {props.currentUserId}></Delete>
                                     <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
 
                                     <Popup trigger={<button>Edit</button>} modal nested>
@@ -79,6 +79,7 @@ export default function Post(props) {
                                     <p><pre>{rawPostList[i].contents}</pre></p>
                                 <div className="flex-container">
                                     <Like likeToChild={rawPostList[i].likes} postIdToChild={rawPostList[i].id} contentToChild={rawPostList[i].contents} userIdToChild={props.currentUserId} postUserIdToChild={rawPostList[i].userid}/>
+                                    <Delete post = {rawPostList[i]} auth = {props.currentUserId}></Delete>
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {rawPostList[i]}/>
                                     </Popup>

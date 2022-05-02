@@ -1,9 +1,8 @@
 import '../css/fonts.css';
 import React from 'react';
 
-const GGMessage = (props) => {
 
-    
+const GGMessage = (props) => {
 
     return( 
         <div className='post'>
