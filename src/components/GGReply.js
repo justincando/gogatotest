@@ -27,7 +27,7 @@ const GGReply = (props) => {
             })
         };
 
-        await fetch(`http://72.191.48.210:8081/post/create`, post);
+        await fetch(`http://localhost:8081/post/create`, post);
         window.location.reload();
     }
 

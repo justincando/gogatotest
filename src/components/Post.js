@@ -25,14 +25,14 @@ export default function Post(props) {
     
     useEffect(() => {
         if (rawPostList.length === 0) {
-            fetch("http://72.191.48.210:8081/post").then(resp => resp.json()).then(data => setRawPostList(data))
+            fetch("http://localhost:8081/post").then(resp => resp.json()).then(data => setRawPostList(data))
         }
         
     }, [rawPostList])
 
     useEffect(() => {
         if (rawUserList.length === 0) {
-            fetch("http://72.191.48.210:8000/users").then(resp => resp.json()).then(data => setRawUserList(data))
+            fetch("http://localhost:8000/users").then(resp => resp.json()).then(data => setRawUserList(data))
         }
         
     }, []) 

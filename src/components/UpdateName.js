@@ -7,7 +7,7 @@ import { useState } from "react";
  */
 const UpdateName = props => {
 
-    const API_URL = "http://72.191.48.210:8000";
+    const API_URL = "http://localhost:8000";
 
     const [inputFields, setInputFields] = useState({
         firstNameText: "",

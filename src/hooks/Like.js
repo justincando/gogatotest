@@ -37,9 +37,9 @@ export default function Like(likeToChild){
             };
             const postJSON =JSON.stringify(post);
         
-            // For not multi computer enviroment Change 72.191.48.210 =>72.191.48.210
-            // if multi computer enviroment change 72.191.48.210 to what you have as you network gateway
-            const response= fetch(`http://72.191.48.210:8081/post`,{ 
+            // For not multi computer enviroment Change localhost =>localhost
+            // if multi computer enviroment change localhost to what you have as you network gateway
+            const response= fetch(`http://localhost:8081/post`,{ 
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json",
@@ -61,10 +61,10 @@ export default function Like(likeToChild){
                 points: option,
             }
             const userJSON=JSON.stringify(users);
-            // For not multi computer enviroment Change 72.191.48.210 =>72.191.48.210! 
-            // if multi computer enviroment change 72.191.48.210 to what you have as you network gateway
+            // For not multi computer enviroment Change localhost =>localhost! 
+            // if multi computer enviroment change localhost to what you have as you network gateway
 
-            fetch(`http://72.191.48.210:8000/users/${postUserId}/points`, { 
+            fetch(`http://localhost:8000/users/${postUserId}/points`, { 
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -83,10 +83,10 @@ export default function Like(likeToChild){
                 // update the comment based on the id from the likes table 
                 // earlier recieved on load check lines 110 114 or 119 for more information
                
-                // For not multi computer enviroment Change 72.191.48.210 =>72.191.48.210! 
-                // if multi computer enviroment change 72.191.48.210 to what you have as you network gateway
+                // For not multi computer enviroment Change localhost =>localhost! 
+                // if multi computer enviroment change localhost to what you have as you network gateway
                 
-                fetch(`http://72.191.48.210:8081/likes/${likesId}`,{
+                fetch(`http://localhost:8081/likes/${likesId}`,{
                     method:"DELETE",
                     });
                 
@@ -99,9 +99,9 @@ export default function Like(likeToChild){
                     like_state: state,
                 }
                 const likestateJSON = JSON.stringify(likestate);
-                // For not multi computer enviroment Change 72.191.48.210 =>72.191.48.210! 
-                // if multi computer enviroment change 72.191.48.210 to what you have as you network gateway
-                fetch("http://72.191.48.210:8081/likes", { 
+                // For not multi computer enviroment Change localhost =>localhost! 
+                // if multi computer enviroment change localhost to what you have as you network gateway
+                fetch("http://localhost:8081/likes", { 
                     method:"POST",
                     headers:{
                         "Content-Type":"application/json"
@@ -122,7 +122,7 @@ export default function Like(likeToChild){
         function isState(currentuserid){
             if(!isLoaded){
                 // makes a fetch call to table posts where current user id is found and pulls out all posts user has a state with
-                fetch(`http://72.191.48.210:8081/likes/${currentuserid}`) 
+                fetch(`http://localhost:8081/likes/${currentuserid}`) 
                 .then(response => response.json())
                 .then(data => checkState(data));
                 function checkState(i){
