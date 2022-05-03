@@ -44,4 +44,4 @@ const CreatePost = (props) => {
    )
 }
 
-export default CreatePost 
+export default CreatePost
