@@ -11,8 +11,6 @@ const GGMessage = (props) => {
             <p>Post:{props.contents}
                 <br></br><br></br>
                Time: {props.time}</p>
-
-            <a href="#">Review Comments</a>
         </div>     
     )
 }
