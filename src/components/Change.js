@@ -29,14 +29,12 @@ const Change = (props) => {
                 id: props.post.id,
                 userid: props.post.userid,
                 contents: inputFields.contents,
-                parent_post: props.post.parent_post
+                parentid: props.post.parentid
             })
         };
 
         fetch('http://localhost:8081/post', post);
-
         window.location.reload();
-        return (<Navigate to = "/timeline"/>);
     }
 
     return (
@@ -47,11 +45,6 @@ const Change = (props) => {
                 <h1>Change Message</h1>
 
                 <form>
-
-                    <input hidden id="id" name="id" value ={props.post.id}></input>
-                    <input hidden id="userid" name="userid" value ={props.post.userid}></input>
-                    <input hidden id="parent_post" name="parent_post" value ={props.parent_post}></input>
-
                     <textarea required id="contents" name="contents" 
                     rows="5" cols="80" placeholder="revise text" 
                     onChange={getInput} value ={inputFields.contents}></textarea>

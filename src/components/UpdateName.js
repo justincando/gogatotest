@@ -9,7 +9,6 @@ const UpdateName = props => {
 
     const API_URL = "http://localhost:8000";
 
-    // Contains fields for User input
     const [inputFields, setInputFields] = useState({
         firstNameText: "",
         lastNameText: ""
@@ -30,12 +29,11 @@ const UpdateName = props => {
      * Submit the updated name(s)
      */
     async function submitUpdatedName() {
-        //  Replace with props.currentUser in production
         await fetch(`${API_URL}/profiles/${props.id}/name?firstName=${inputFields.firstNameText}&lastName=${inputFields.lastNameText}`,
             {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" }
-            })
+            }).then(window.location.reload());
     }
 
 
