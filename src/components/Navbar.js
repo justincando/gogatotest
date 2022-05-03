@@ -39,9 +39,9 @@ export default function Navbar({ currentUserId, setCurrentUserId, setUser }) {
           <div className="flex-item"><Link to="/trends">Trends</Link></div>
           <div className="flex-item"><Link to="/timeline">Timeline</Link></div>
           <div className="flex-item"><button className='logout'  onClick={logout}>Log Out</button></div>
+          </div>
         </div>
-        </div>
-    </>
+        </>
   ) : (
     <>
       <div className="nav-flex-container">

@@ -39,7 +39,6 @@ class Trend extends Component{
                     <label>Search for Trend: </label>
                     <input type="text" onChange = {this.handleChange} value={this.state.hashtag}/>
                 </div>
-
                 <GGPosts hashtag = {this.state.hashtag} post={this.state.post}/>
                 <div className="genericFooter"></div>
             </section>
