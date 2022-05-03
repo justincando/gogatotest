@@ -15,7 +15,7 @@ class PContainer extends Component{
 
     componentDidMount(){
 
-        var API_URL = "http://localhost:8081";
+        var API_URL = "http://72.191.48.210:8081";
         API_URL = API_URL + "/post/userid/" + this.props.currentUserId;
 
         fetch(API_URL,{

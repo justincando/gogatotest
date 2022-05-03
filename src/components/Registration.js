@@ -41,7 +41,7 @@ function Registration({ currentUserId}) {
       aboutMe: inputFields.aboutMe,
     };
     // Submit info to server
-    await fetch("http://localhost:8000/users", {
+    await fetch("http://72.191.48.210:8000/users", {
       headers: {
         "content-type": "application/json",
       },
