@@ -8,6 +8,10 @@ import PContainer from "./components/PContainer";
 import Profile from './components/Profile';
 import Post from './components/Post';
 import Trend from './components/Trending/Trend';
+import HomePage from "./components/HomePage";
+
+import './css/navi.css';
+import './css/fonts.css'
 
 import './css/navi.css';
 import './css/fonts.css';
@@ -44,6 +48,7 @@ function App() {
         <Route path="/myposts" element={<PContainer currentUserId={currentUserId} user={user} />}/>
         <Route path="/trends" element={<Trend currentUserId={currentUserId}/>}/>
         <Route path="/timeline" element={<Post currentUserId={currentUserId}/>}/>
+        <Route exact path="/" element={<HomePage/>}/>
 
       </Routes>
     </BrowserRouter>

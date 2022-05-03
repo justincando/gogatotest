@@ -46,7 +46,8 @@ export default function Navbar({ currentUserId, setCurrentUserId, setUser }) {
     <>
       <div className="nav-flex-container">
           <div className="left"><img alt="GG Logo" src='https://raw.githubusercontent.com/Revature-GoGato/GoGatoFrontEnd/development/public/logo/ggs.png'></img></div>
-        
+          <div className="flex-item"><Link to="/">Home</Link></div>
+
           <div className="right">
             <div className="flex-item"><Link to="/login"> Login</Link></div>
             <div className="flex-item"><Link to="/registration"> Register</Link></div>
