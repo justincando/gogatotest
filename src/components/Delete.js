@@ -19,7 +19,7 @@ const Delete = (props) => {
             })
         };
 
-        fetch('http://localhost:8081/post', post);
+        fetch('http://54.196.107.3:8081/post', post);
         window.location.reload();
     }
 
