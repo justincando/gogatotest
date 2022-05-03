@@ -5,7 +5,7 @@ const Delete = (props) => {
     // console.log(props.auth);
     // console.log(props.post.userid);
 
-    function onPress(){
+    async function onPress(){
         const post = {
 
             method: 'PUT',
@@ -19,7 +19,7 @@ const Delete = (props) => {
             })
         };
 
-        fetch('http://localhost:8081/post', post);
+        await fetch('http://localhost:8081/post', post);
         window.location.reload();
     }
 
