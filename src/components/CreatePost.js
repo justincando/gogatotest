@@ -25,7 +25,7 @@ const CreatePost = (props) => {
             },
          })
          .then(res => res.json())
-
+         .then(window.location.reload())
       }  
 
    const handleChange = e => {
