@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import blankLike from './../images/BlankLikeGGs.png'
+import blankLike from './../images/BlankLikeGGs.png';
 import { useState } from "react";
-import blankDislike from './../images/BlankDislikeGGs.png'
-import filledDislike from './../images/FilledDislikeGGs.png'
-import filledLike from './../images/FilledLikeGGs.png'
+import blankDislike from './../images/BlankDislikeGGs.png';
+import filledDislike from './../images/FilledDislikeGGs.png';
+import filledLike from './../images/FilledLikeGGs.png';
 /*
     Variables needed fromparent component to work are:
     likeToChild ==  likes of current post
@@ -47,7 +47,7 @@ export default function Like(likeToChild){
                 body:postJSON,
             });
             if(response.status == 200){
-                alert("submitted")
+                alert("submitted");
             }
 
             
@@ -133,8 +133,8 @@ export default function Like(likeToChild){
                         setLImage(filledLike);
                         setDImage(blankDislike);
                         //gets the id from Likes table to make a put method based on the id from the likes table later
-                        setLikesId(i[j].id)
-                        setOn(true)
+                        setLikesId(i[j].id);
+                        setOn(true);
                         setIsLoaded(true);
                         
 
@@ -145,7 +145,7 @@ export default function Like(likeToChild){
                         setDImage(filledDislike);
                         //gets the id from Likes table to make a put method based on the id from the likes table later
                         setLikesId(i[j].id);
-                        setOff(true)
+                        setOff(true);
                         setIsLoaded(true);
                         
 
