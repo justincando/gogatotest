@@ -31,7 +31,7 @@ export default function Like(likeToChild){
                 id : likeToChild.postIdToChild,
                 contents: likeToChild.contentToChild,
                 likes : likes,
-                userid : likeToChild.userIdToChild,
+                userid : likeToChild.postUserIdToChild,
                 parentid: 0,
 
             };
@@ -63,7 +63,8 @@ export default function Like(likeToChild){
             const userJSON=JSON.stringify(users);
             // For not multi computer enviroment Change 192.168.1.126 =>localhost! 
             // if multi computer enviroment change 192.168.1.126 to what you have as you network gateway
-            fetch(`http://localhost:8081/users/${postUserId}/points`, { 
+
+            fetch(`http://localhost:8000/users/${postUserId}/points`, { 
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
