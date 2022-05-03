@@ -3,15 +3,20 @@ import Delete from "../Delete";
 
 const GGMessage = (props) => {
 
-    return( 
-        <div className='ggMessage'>
-            <p>Post:{props.contents}
-                <br></br><br></br>
-               Time: {props.time}</p>
+    return (
+      <div className="ggMessage">
+        <div className="trendBox">
+          <p>
+            Post:{props.contents}
+            <br></br>
+            <br></br>
+            Time: {props.time}
+          </p>
 
-            <a href="/myposts">Review Comments</a>
-        </div>     
-    )
+          <a href="/myposts">Review Comments</a>
+        </div>
+      </div>
+    );
 }
 
 export default GGMessage;
