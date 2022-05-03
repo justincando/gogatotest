@@ -11,7 +11,7 @@ const GGReply = (props) => {
         setInputFields({...inputFields, [event.target.name]: event.target.value,})
     }
 
-    function onPress(e){
+    async function onPress(e){
 
         e.preventDefault();
 
@@ -27,7 +27,7 @@ const GGReply = (props) => {
             })
         };
 
-        fetch('http://localhost:8081/post/create', post);
+        await fetch(`http://localhost:8081/post/create`, post);
         window.location.reload();
     }
 

@@ -3,6 +3,7 @@ import Delete from "../Delete";
 
 const GGMessage = (props) => {
 
+
     return (
       <div className="ggMessage">
         <div className="trendBox">
@@ -12,8 +13,6 @@ const GGMessage = (props) => {
             <br></br>
             Time: {props.time}
           </p>
-
-          <a href="/myposts">Review Comments</a>
         </div>
       </div>
     );
