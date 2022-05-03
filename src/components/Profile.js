@@ -10,7 +10,7 @@ import '../css/profile.css';
  */
 function Profile(props) {
     let { id } = useParams();
-    const API_URL = "http://54.196.107.3:8000";
+    const API_URL = "http://localhost:8000";
     const [data, setData] = useState();
     const [doNotUpdate, toggleDoNotUpdate] = useState(false);
     const [showHideEdit, toggleEditDisplay] = useState(false);

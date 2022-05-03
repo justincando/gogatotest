@@ -33,7 +33,7 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
     };
 
     // Submit info to server
-   let data= await fetch("http://54.196.107.3:8000/login", {
+   let data= await fetch("http://localhost:8000/login", {
       headers: {
         "content-type": "application/json",
       },

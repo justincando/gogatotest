@@ -8,7 +8,7 @@ import { useState } from "react";
  */
 const UpdateAboutMe = props => {
 
-    const API_URL = "http://54.196.107.3:8000";
+    const API_URL = "http://localhost:8000";
 
     const [aboutMeText, setaboutMeText] = useState("");
 

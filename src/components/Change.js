@@ -33,7 +33,7 @@ const Change = (props) => {
             })
         };
 
-        fetch('http://54.196.107.3:8081/post', post);
+        fetch('http://localhost:8081/post', post);
         window.location.reload();
     }
 

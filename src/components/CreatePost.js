@@ -16,7 +16,7 @@ const CreatePost = (props) => {
       console.log("submit handled")
       // fetch is happening here
 
-         fetch(`http://54.196.107.3:8081/post/create`, {
+         fetch(`http://localhost:8081/post/create`, {
             method: "POST",
             mode: "cors",
             body: JSON.stringify({ contents: postContent, likes: 0,  userid: props.userid, parentid: 0}),
