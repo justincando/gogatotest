@@ -43,7 +43,7 @@ export default function Post(props) {
             if (element.parentid == id) {
                 let username = ""
                 for (let j = 0; j < rawUserList.length; j++) {
-                    if (rawUserList[j].id == id) {
+                    if (rawUserList[j].id == element.userid) {
                         username = rawUserList[j].username
                         break;
                     }
@@ -56,10 +56,8 @@ export default function Post(props) {
                                     <h4>{username}</h4>
                                     <h4>{element.post_time}</h4>
                                 </div>
-                                <p>{element.content}</p>
+                                <p>{element.contents}</p>
                                 <div className="flex-container">
-
-                                    <Like />
                                     <Delete post = {element} auth = {props.currentUserId}></Delete>
                                     <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
                                     <Popup trigger={<button>Reply</button>} modal nested>
