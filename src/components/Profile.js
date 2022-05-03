@@ -53,7 +53,6 @@ function Profile(props) {
 
                         <h1>{data.username}'s profile </h1>
                         <h3>About Me: {data.aboutMe}</h3>
-                        <h3>Followers: {data.followerCount}</h3>
                         <h3>Points: {data.points}</h3>
                         <h3>First Name: {data.firstName}</h3>
                         <h3>Last Name: {data.lastName}</h3>
