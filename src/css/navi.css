@@ -1,9 +1,18 @@
 .flex-item{
     text-align: center;
     flex-grow:0;
+    
     width:15%;
-    padding: 3%;
-    margin: auto;
+    padding: 16px 24px;
+    margin: auto 50px;
+    background-color: rgb(242, 105, 38);
+    border-radius: 10px;
+  }
+
+  .flex-item:hover{
+    opacity: .8;
+    cursor: pointer;
+    transition: all 200ms ease;
   }
   
   .nav-flex-container{
@@ -46,5 +55,10 @@
   a:visited { 
     text-decoration: none; 
     color: inherit; 
+   }
+   #logout{
+    border: 0;
+    padding: 0;
+    background-color: rgb(4, 4, 4);    
    }
    
