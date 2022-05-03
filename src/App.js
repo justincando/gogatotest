@@ -46,7 +46,7 @@ function App() {
         <Route path="/myposts" element={<PContainer currentUserId={currentUserId} user={user} />}/>
         <Route path="/trends" element={<Trend currentUserId={currentUserId}/>}/>
         <Route path="/timeline" element={<Post currentUserId={currentUserId}/>}/>
-        <Route exact path="/homepage" element={<HomePage/>}/>
+        <Route exact path="/" element={<HomePage/>}/>
 
       </Routes>
     </BrowserRouter>
