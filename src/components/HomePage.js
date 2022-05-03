@@ -103,7 +103,7 @@ export default function HomePage() {
             <div class="fixedright display">
                 <div class="minoritem">
                     <h2>GOGATO</h2>
-                    <h4>Insert Slogan Here</h4>
+                    <h4>Cat... chup with the world!</h4>
                 </div>
             </div>
 
