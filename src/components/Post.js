@@ -63,9 +63,12 @@ export default function Post(props) {
                                     <Popup trigger={<button>Reply</button>} modal nested>
                                         <GGReply userid ={props.currentUserId} post = {element}/>
                                     </Popup>
+                                    {props.currentUserId == element.userid ? 
+                                    (
                                     <Popup trigger={<button>Edit</button>} modal nested>
                                         <Change post = {element}/>
                                     </Popup>
+                                    ): null}
                                 </div>
                             </div>
                         </article>    
@@ -103,9 +106,12 @@ export default function Post(props) {
                                     <Popup trigger={<button>Reply</button>} modal nested>
                                         <GGReply userid ={props.currentUserId} post = {rawPostList[i]}/>
                                     </Popup>
-                                    <Popup trigger={<button>Edit</button>} modal nested>
-                                        <Change post = {rawPostList[i]}/>
-                                    </Popup>
+                                    {props.currentUserId == rawPostList[i].userid ? 
+                                    (
+                                        <Popup trigger={<button>Edit</button>} modal nested>
+                                            <Change post = {rawPostList[i]}/>
+                                        </Popup>
+                                    ): null}
                                 </div>    
                             </div>
                             
