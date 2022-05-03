@@ -39,9 +39,9 @@ function App() {
         />
 
         <Route exact path="/profile/:id" element={<Profile currentUser={currentUserId} />} />
-        <Route path="/myposts" element={<HomePage currentUserId={currentUserId}/>}/>
+        <Route path="/myposts" element={<PContainer currentUserId={currentUserId} user={user} />}/>
         <Route path="/timeline" element={<Post currentUserId={currentUserId}/>}/>
-        <Route path="/homepage" element={<HomePage currentUserId={currentUserId}/>}/>
+        <Route exact path="/homepage" element={<HomePage/>}/>
 
       </Routes>
     </BrowserRouter>
