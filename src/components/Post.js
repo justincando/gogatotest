@@ -59,7 +59,7 @@ export default function Post(props) {
                                 <p>{element.contents}</p>
                                 <div className="flex-container">
                                     <Delete post = {element} auth = {props.currentUserId}></Delete>
-                                    <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid}/>
+                                    <Like likeToChild={element.likes} postIdToChild={element.id} contentToChild={element.contents} userIdToChild={props.currentUserId} postUserIdToChild={element.userid} parentIdToChild={element.parentid}/>
                                     <Popup trigger={<button>Reply</button>} modal nested>
                                         <GGReply userid ={props.currentUserId} post = {element}/>
                                     </Popup>
