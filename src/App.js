@@ -13,6 +13,8 @@ import HomePage from "./components/HomePage";
 import './css/navi.css';
 import './css/fonts.css'
 
+import './css/navi.css';
+import './css/fonts.css';
 
 function App() {
   const [currentUserId, setCurrentUserId] = useState(0); // Tracks current user Id, along with localstorage in login/registration components

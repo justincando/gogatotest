@@ -1,4 +1,4 @@
-/* Authors: Jazib, Christian*/
+/* Authors: Jazib, Christian, Elaine, Ishaan, Halim*/
 
 /* General page stlying */
 #profile-page{
@@ -13,9 +13,11 @@
   margin-bottom: 15px;
   padding: 1rem;
   width: 30rem;
-  background: rgba(243, 150, 9, 0.4);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgb(20, 20, 20);
+  color: rgb(93, 93, 93);
+  background-color: rgb(255, 244, 239);
+  box-shadow: 10px 10px 0px rgb(242 105 38);
+  border: 1px solid rgb(93, 93, 93);
   text-align: center;
 
     
@@ -42,29 +44,32 @@
   margin-bottom: 50px;
   padding: 1rem;
   width: 30rem;
-  background: rgba(185, 185, 186, 0.842);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(20, 20, 20);
+  background-color: rgb(255, 244, 239);
+  box-shadow: 10px 10px 0px rgb(242 105 38);
+  border: 1px solid rgb(93, 93, 93);
+  border-radius: 15px;
   text-align: center;
 }
 
 /* Name area specific style */
 .update-name-area{
-    height:200px; 
+  height:200px; 
   margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
   padding: 1rem;
   width: 30rem;
-  background: rgba(185, 185, 186, 0.842);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(20, 20, 20);
-  text-align: center;
-    
+  background-color: rgb(255, 244, 239);
+  box-shadow: 10px 10px 0px rgb(242 105 38);
+  border: 1px solid rgb(93, 93, 93);
+  border-radius: 15px;
+  text-align: center;    
 }
 
 /* Margin and padding for the name area styling */
 .update-name-area input, button{
-    margin: 8px 0px;
-    /* padding-top:px; */
+
+  margin: 8px 0px;
+  /* padding-top:px; */
+
 }
