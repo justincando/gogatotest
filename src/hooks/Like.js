@@ -32,7 +32,7 @@ export default function Like(likeToChild){
                 contents: likeToChild.contentToChild,
                 likes : likes,
                 userid : likeToChild.postUserIdToChild,
-                parentid: 0,
+                parentid: likeToChild.parentIdToChild,
 
             };
             const postJSON =JSON.stringify(post);
