@@ -13,7 +13,7 @@ const CreatePost = (props) => {
 
    const handleSubmit = e => {
       e.preventDefault();
-      console.log("submit handled")
+      //console.log("submit handled")
       // fetch is happening here
 
          fetch(`http://localhost:8081/post/create`, {
@@ -38,7 +38,7 @@ const CreatePost = (props) => {
          <form onSubmit={handleSubmit} className="center">
             <p><label htmlFor="post input"><h3>What would you like to share? 📝</h3></label></p>
             <p><input className="center" type="textarea" name={postContent} onChange={handleChange} autoFocus ></input></p>
-            <p><input type="submit" name="Create Post" ></input></p>
+            <p><input type="submit" name="Create Post" value="Create Post" ></input></p>
          </form>
       </>
    )

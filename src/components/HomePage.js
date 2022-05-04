@@ -18,12 +18,20 @@ export default function HomePage() {
 
     const readyPostList = []
     const [rawPostList, setRawPostList] = useState([])
+    const [rawUserList, setRawUserList] = useState([])
 
     useEffect(() => {
         if (rawPostList.length === 0) {
             fetch("http://localhost:8081/post").then(resp => resp.json()).then(data => setRawPostList(data))
         }
     }, [rawPostList])
+
+    useEffect(() => {
+        if (rawUserList.length === 0) {
+            fetch("http://localhost:8000/users").then(resp => resp.json()).then(data => setRawUserList(data))
+        }
+        
+    }, []) 
 
     const getCommentsByParentId = (id) => {
         const commentList = []
@@ -59,11 +67,18 @@ export default function HomePage() {
         for (let i = 0; i < 5; i++) {
             try {
                 if (rawPostList[i].parentid === 0) {
+                    let username = ""
+                    for (let j = 0; j < rawUserList.length; j++) {
+                        if (rawUserList[j].id == rawPostList[i].userid) {
+                            username = rawUserList[j].username
+                            break;
+                        }
+                    }
                     readyPostList.push(
                         <article  key={rawPostList[i].id}>
                             <div className="post" id={"post" + rawPostList[i].id} >
                                 <div className="flex-container post-header">
-                                    <h4>{rawPostList[i].userid}</h4>
+                                    <h4>{username}</h4>
                                     <h4>{rawPostList[i].post_time}</h4>
                                 </div>
                                     <p>{rawPostList[i].contents}</p>
