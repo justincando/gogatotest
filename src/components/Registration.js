@@ -48,8 +48,8 @@ function Registration({ currentUserId}) {
       method: "POST",
       body: JSON.stringify(userInfo),
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((response) => response.json());
+      //.then((data) => console.log(data));
 
     // Decide on redirection or auto login here =====
     setSuccess(true);

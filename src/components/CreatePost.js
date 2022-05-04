@@ -13,7 +13,7 @@ const CreatePost = (props) => {
 
    const handleSubmit = e => {
       e.preventDefault();
-      console.log("submit handled")
+      //console.log("submit handled")
       // fetch is happening here
 
          fetch(`http://localhost:8081/post/create`, {

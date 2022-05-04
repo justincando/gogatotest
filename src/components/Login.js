@@ -47,7 +47,7 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
       window.localStorage.setItem( "userId", data);
       setCurrentUserId(data);
       window.localStorage.setItem( "username", userInfo.username);
-      console.log(userInfo.username);
+      //console.log(userInfo.username);
       setUser(userInfo.username);
       
     }

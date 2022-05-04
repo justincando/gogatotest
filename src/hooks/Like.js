@@ -78,7 +78,7 @@ export default function Like(likeToChild){
             // checks if state is null so that if the user makes a state connection it will post to Likes table
             
            if(option == 0){ 
-               console.log(likesId);
+               //console.log(likesId);
                 //if state is not null then instead of making a new post this will 
                 // update the comment based on the id from the likes table 
                 // earlier recieved on load check lines 110 114 or 119 for more information
