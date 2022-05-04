@@ -47,10 +47,10 @@ function Login({ currentUserId, setCurrentUserId, setUser }) {
       window.localStorage.setItem( "userId", data);
       setCurrentUserId(data);
       window.localStorage.setItem( "username", userInfo.username);
-      console.log(userInfo.username);
+      //console.log(userInfo.username);
       setUser(userInfo.username);
       
-    }
+    } else {alert("Login failed. Try again.");}
   }
 
   return currentUserId > 0 ? (<Navigate to ={"/profile/"+ currentUserId }/>) :  (
