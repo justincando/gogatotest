@@ -4,7 +4,7 @@
 /* global css rules */
 html, body, #root, .App {
   height: 100%;
-  background: aliceblue;
+  background: rgba(185, 185, 186);
 }
 
 
@@ -118,6 +118,10 @@ button:hover, input[type="submit"] {
         opacity: 0.85;
         cursor: pointer;
         transition: all 200ms ease-in-out;
+}
+/* Authors: Jazib, Christian, Elaine, Ishaan, Halim*/
+.logout{
+  background-color: rgba(253, 181, 21);
 }
 
 
