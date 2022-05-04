@@ -49,7 +49,7 @@ export default function Navbar({ currentUserId, setCurrentUserId, setUser }) {
           <div className="flex-item"><Link to="/">Home</Link></div>
 
           <div className="right">
-            <div className="flex-item"><Link to="/login"> Login</Link></div>
+            <Link to="/login"><div className="flex-item"> Login</div></Link>
             <div className="flex-item"><Link to="/registration"> Register</Link></div>
           </div>
       </div>
