@@ -1,9 +1,11 @@
 // Author: Tyler, Jason, Boualem, Marcus
+import '../css/navi.css';
 import { useState, useEffect } from "react";
 import {Navigate} from "react-router-dom";
+import '../css/login.css';
 
 // Functional component for User Login
-function Login({ currentUserId, setCurrentUserId }) {
+function Login({ currentUserId, setCurrentUserId, setUser }) {
 
   // Contains fields for User input
   const [inputFields, setInputFields] = useState({
@@ -44,13 +46,20 @@ function Login({ currentUserId, setCurrentUserId }) {
     if (data!=0){
       window.localStorage.setItem( "userId", data);
       setCurrentUserId(data);
-    }
+      window.localStorage.setItem( "username", userInfo.username);
+      //console.log(userInfo.username);
+      setUser(userInfo.username);
+      
+    } else {alert("Login failed. Try again.");}
   }
 
   return currentUserId > 0 ? (<Navigate to ={"/profile/"+ currentUserId }/>) :  (
     <>
+    <div id= "login-page">
+    <div id="login-data">
       <h1>Login</h1>
       <form onSubmit={loginUser}>
+      <br /><br />
         {/* Username Field */}
         Username:{" "}
         <input
@@ -61,7 +70,7 @@ function Login({ currentUserId, setCurrentUserId }) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br />
         {/* Password Field */}
         Password:{" "}
         <input
@@ -72,10 +81,12 @@ function Login({ currentUserId, setCurrentUserId }) {
           onChange={getInput}
           required
         />
-        <br />
+        <br /><br /><br />
         
         <button type="submit">Login</button>
       </form>
+      </div>
+      </div>
     </>
   );
 }

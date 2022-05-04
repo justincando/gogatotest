@@ -24,19 +24,16 @@ const UpdateAboutMe = props => {
      * Submit the updated bio (about me) information
      */
     async function submitUpdatedAboutMe() {
-        console.log(aboutMeText);
-
         const newAboutMe = {
             "aboutMe": aboutMeText
         }
 
-        //  Replace with props.currentUser in production
         await fetch(`${API_URL}/profiles/${props.id}/about`,
             {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newAboutMe)
-            })
+            }).then(window.location.reload());
             
     }
 
