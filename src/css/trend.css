@@ -1,0 +1,22 @@
+.searchBox{
+    width: 80vw;
+    text-align: center;
+    padding: 3em;
+    border-radius: 15px;
+    }
+
+.trendBox{
+    margin-top: 33px;
+    padding: 10px;
+    height: auto;
+    color: rgb(93, 93, 93);
+    background-color: rgb(255, 244, 239);
+    box-shadow: 10px 10px 0px rgb(242 105 38);
+    border: 1px solid rgb(93, 93, 93);
+
+    /* box-shadow: 0 0 0 3px  black; */
+    border-radius: 15px;
+    overflow:auto;
+    scrollbar-width: none;
+    size: 16px; 
+}    
